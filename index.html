@@ -28,28 +28,56 @@
 </head>
 
 <body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top navbar-toggleable-md" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="#">Hello, World!</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="javascript:window.scrollBy(0, $('section[data-scene=scene1]').offset().top  - $(window).scrollTop() - $('.navbar').height()  - 10);">Scene 1</a>
+                </li>
+                <li>
+                    <a href="javascript:window.scrollBy(0, $('section[data-scene=scene2]').offset().top  - $(window).scrollTop() - $('.navbar').height()  - 10);">Scene 2</a>
+                </li>
+                <li>
+                    <a href="javascript:window.scrollBy(0, $('section[data-scene=scene3]').offset().top  - $(window).scrollTop() - $('.navbar').height()  - 10);">Scene 3</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</div>
+
   <div class="container-fluid" >
+
       <div class="row">
          <div class="col-sm-6 col-md-4 main">
-            <section data-scene="Gill Coliseum">
+            <section data-scene="scene1">
                 <h2>Gill Coliseum</h2>
             </section>
-            <section data-scene="Goss Stadium at Coleman Field">
+            <section data-scene="scene2">
                 <h2>Goss Stadium at Coleman Field</h2>
             </section>
-            <section data-scene="OSU Softball Complex">
+            <section data-scene="scene3">
                 <h2>OSU Softball Complex</h2>
             </section>
-            <section data-scene="Paul Lorenz Field">
+            <section data-scene="scene4">
                 <h2>Paul Lorenz Field</h2>
             </section>
-            <section data-scene="Reser Stadium">
+            <section data-scene="scene5">
                 <h2>Reser Stadium</h2>
             </section>
-            <section data-scene="Trysting Tree Golf Club">
+            <section data-scene="scene6">
                 <h2>Trysting Tree Golf Club</h2>
             </section>
-            <section data-scene="Whyte Track and Field Center">
+            <section data-scene="scene7">
                 <h2>Whyte Track and Field Center</h2>
             </section>
       </div>
@@ -62,7 +90,7 @@
     <div class="navwidget text-center"></div>
     <!--add a progress line-->
     <div class="progress-line"></div>
-    
+
 </div>
 <script type="text/javascript">
 
