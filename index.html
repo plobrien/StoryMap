@@ -23,7 +23,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
 
     <!--story map plugin-->
-    <script src="../../dist/storymap.js"></script>
+    <script src="https://raw.githubusercontent.com/jakobzhao/storymap/master/dist/storymap.2.5.css"></script>
+    <script src="https://raw.githubusercontent.com/jakobzhao/storymap/master/dist/storymap.2.5.js"></script>
 
 </head>
 
@@ -97,7 +98,7 @@
         scene2: {lat: 44.5701158, lng: -123.2949388, zoom: 14, layers: ['layer 2'], name: "scene 2"},
         scene3: {lat: 44.5701158, lng: -123.2949388, zoom: 12, layers: ['layer 1', 'layer 2'], name: "scene 3"}
     };
-    $('#storymap').storymap({
+    $('.main').storymap({
         scenes: scenes,
         layers: layers,
         legend: true,
