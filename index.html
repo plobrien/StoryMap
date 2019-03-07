@@ -90,23 +90,40 @@
 </div>
 <script type="text/javascript">
     var layers = {
-        'layer 1': [L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'), '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'],
-        'layer 2': [ L.geoJson.ajax('https://mapious.ceoas.oregonstate.edu/geoserver/ceoas/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ceoas:admin&outputFormat=application%2Fjson', {color: 'orange', weight: 5}), '<i style="background: orange; opacity: 0.5"></i><p><b>legend 2</b></p>']
+        layer1: {
+            layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+            legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'
+        },
+        layer2: {
+            layer: L.geoJson.ajax('../../assets/counties.geojson', {
+                color: 'orange',
+                weight: 5
+            }),
+            legend: '<i style="background: orange; opacity: 0.5"></i><p><b>legend 2</b></p>'
+        },
+        layer3: {
+            layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
+        }
     };
     var scenes = {
-        scene1: {lat: 44, lng: -123.5, zoom: 7, layers: ['layer 1'], name: "scene 1"},
-        scene2: {lat: 44.5701158, lng: -123.2949388, zoom: 14, layers: ['layer 2'], name: "scene 2"},
-        scene3: {lat: 44.5701158, lng: -123.2949388, zoom: 12, layers: ['layer 1', 'layer 2'], name: "scene 3"}
+        gill: {lat: 44, lng: -123.5, zoom: 7, layers: [layers.layer2], name: "scene 1"},
+        goss: {lat: 44.5701158, lng: -123.2949388, zoom: 10, layers: [layers.layer2], name: "scene 2"},
+        reser: {lat: 44.5701158, lng: -123.2949388, zoom: 12, layers: [layers.layer1, layers.layer2], name: "scene 3"}
     };
-    $('.main').storymap({
+    $('#storymap').storymap({
         scenes: scenes,
-        layers: layers,
+        baselayer: layers.layer3,
         legend: true,
-        scale: true,
+        loader: true,
+        flyto: true,
+        credits:  "Build with <i class='material-icons' style='color: red; font-size: 10px;'>favorite</i> from Bo Zhao",
+        scalebar: true,
+        scrolldown: true,
+        progressline: true,
         navwidget: true,
         createMap: function () {
-            var map = L.map('map', {zoomControl: false}).setView([44, -120], 7);
-            L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png').addTo(map);
+            var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([44, -120], 7);
+            basemap = this.baselayer.layer.addTo(map);
             return map;
         }
     });
