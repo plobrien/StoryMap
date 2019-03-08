@@ -176,14 +176,10 @@
     // }
 
     var layers = {
-        ESRI: {layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')},
-        counties: {
-            layer: L.geoJson.ajax('../../assets/counties.geojson', {
-                color: 'orange',
-                weight: 2,
-                opacity: 0.3
-            }), legend: county_legend
-        },
+      layer1: {
+     layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+     legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'
+ },
         GEE: {
             layer: L.tileLayer('https://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png'),
             legend: forest_legend
