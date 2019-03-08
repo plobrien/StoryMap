@@ -175,8 +175,21 @@
 
     var layers = {
       layer1: {
-         lkayer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        });
+               layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+               legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'
+           },
+           layer2: {
+               layer: L.geoJson.ajax('http://mapious.ceoas.oregonstate.edu/geoserver/mapious/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ore_counties&outputFormat=application%2Fjson', {
+                   color: 'orange',
+                   weight: 5
+               }),
+               legend: '<i style="background: orange; opacity: 0.5"></i><p><b>legend 2</b></p>'
+           },
+           layer3: {
+               layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
+           }
+       };
+
 
     var scenes = {
         overview: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Cover Page', layers: []},
