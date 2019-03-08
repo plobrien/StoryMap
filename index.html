@@ -65,7 +65,7 @@
             <section data-scene="gill">
                 <h2>Gill Coliseum</h2>
                 <p>Gill Coliseum is the competitive home of the Oregon State men's basketball, women's basketball, women's gymnastics, wrestling and volleyball teams. The arena's capacity is 9,604 for competitions on Ralph Miller Court, and the building also includes a weight room, equipment center, locker rooms and offices for the athletic department and its teams. Gill Coliseum also has a state-of-the-art sports medicine center, located on the lower level, that provides leading-edge injury prevention and rehabilitation services. Since its opening in 1949, Gill Coliseum has been part of more than 3,000 victories, more than 150 Oregon State All-Americans and more than 25 individual and team titles.</p>
-                
+
             </section>
 
             <section data-scene="goss">
@@ -160,26 +160,25 @@
 
 <!-- main javascript -->
 <script type="text/javascript">
-ESRI: layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')},
-    counties: {
-        layer: L.geoJson.ajax('../../assets/counties.geojson', {
-            color: 'orange',
-            weight: 2,
-            opacity: 0.3
-        }), legend: county_legend
-    },
-    GEE: {
-        layer: L.tileLayer('http://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png'),
-        legend: forest_legend
-    },
-    satellite: {
-        layer: L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
-            id: 'mapbox.satellite'
-        })
-    },
-    cartodb_light: {layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')}
-};
-
+      ESRI: {layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')},
+        counties: {
+           layer: L.geoJson.ajax('../../assets/counties.geojson', {
+               color: 'orange',
+               weight: 2,
+               opacity: 0.3
+           }), legend: county_legend
+       },
+       GEE: {
+           layer: L.tileLayer('http://earthengine.google.org/static/hansen_2013/tree_alpha/{z}/{x}/{y}.png'),
+           legend: forest_legend
+       },
+       satellite: {
+           layer: L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
+               id: 'mapbox.satellite'
+           })
+       },
+       cartodb_light: {layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')}
+   };
     var scenes = {
         overview: {lat: 44.0000000, lng: -123.278858, zoom: 7, name: 'Cover Page', layers: []},
         gill: {lat: 45.560805, lng: -122.7270297, zoom: 11, name: 'Gill Coliseum', layers: [layers.ESRI]},
