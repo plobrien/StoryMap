@@ -162,13 +162,6 @@
 <script type="text/javascript">
        ESRI: {
            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')}
-       },
-       satellite: {
-           layer: L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw', {
-               id: 'mapbox.satellite'
-           })
-       },
-       cartodb_light: {layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')}
    };
     var scenes = {
         overview: {lat: 44.0000000, lng: -123.278858, zoom: 7, name: 'Cover Page', layers: []},
