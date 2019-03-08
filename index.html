@@ -175,31 +175,31 @@
 
     var layers = {
       layer1: {
-               layer: L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
+               layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
                legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'
            },
            layer2: {
-               layer: L.geoJson.ajax('http://mapious.ceoas.oregonstate.edu/geoserver/mapious/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ore_counties&outputFormat=application%2Fjson', {
+               layer: L.geoJson.ajax('https://mapious.ceoas.oregonstate.edu/geoserver/mapious/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ore_counties&outputFormat=application%2Fjson', {
                    color: 'orange',
                    weight: 5
                }),
                legend: '<i style="background: orange; opacity: 0.5"></i><p><b>legend 2</b></p>'
            },
            layer3: {
-               layer: L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
+               layer: L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png')
            }
        };
 
 
     var scenes = {
-        overview: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Cover Page', layers: []},
-        gill: {lat: 45.5186089, lng: -122.7270297, zoom: 11, name: 'Portland', layers: []},
-        goss: {lat: 44.5701158, lng: -123.2949388, zoom: 14, name: 'Corvallis', layers: [layers.ESRI]},
-        softball: {lat: 44.0549563, lng: -123.0958048, zoom: 13, name: 'Eugene', layers: []},
-        soccer: {lat: 44.9419055, lng: -123.0356407, zoom: 13, name: 'Salem', layers: []},
-        reser: {lat: 44.0519385, lng: -121.3042125, zoom: 14, name: 'Bend', layers: [layers.counties, layers.satellite]},
-        golf: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Oregon State', layers: [layers.GEE]},
-        track: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'Oregon State', layers: [layers.GEE]},
+        overview: {lat: 44.0000000, lng: -123.278858, zoom: 7, name: 'Cover Page', layers: []},
+        gill: {lat: 45.560805, lng: -122.7270297, zoom: 11, name: 'Portland', layers: []},
+        goss: {lat: 44.562681, lng: -123.274999, zoom: 14, name: 'Corvallis', layers: [layers.ESRI]},
+        softball: {lat: 44.558057, lng: -123.276189, zoom: 13, name: 'Eugene', layers: []},
+        soccer: {lat: 44.558536, lng: -123.274488, zoom: 13, name: 'Salem', layers: []},
+        reser: {lat: 44.559238, lng: -123.278093, zoom: 14, name: 'Reser Stadium', layers: [layers.counties, layers.satellite]},
+        golf: {lat: 44.569209, lng: -123.233821, zoom: 7, name: 'Oregon State', layers: [layers.GEE]},
+        track: {lat: 44.557577, lng: -123.273720, zoom: 7, name: 'Oregon State', layers: [layers.GEE]},
         end: {lat: 44.0000000, lng: -123.5000000, zoom: 7, name: 'The End'}
     };
 
