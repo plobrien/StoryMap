@@ -161,7 +161,7 @@
 <!-- main javascript -->
 <script type="text/javascript">
     var layers = {
-        ESRI: { L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}access_token=jQHl8ui05qjCj7cuHZa0pa0VVumbuMkj32T4I54uwSakMlz-wirkGr6uFB4R4YQBzumi-8zpYDe6OmeZ3dvwrKxCZ4CzZ935sPMy4qETKl38lry1eqDvBflDO_rMgDnxiEvZSii7XudNnTKNESSwoSyi7H65SDITu_Bt5z4NZFp4eN-lJf_zQquCgDnPuz1niI9g2L9Sju8icpd51QiOlQJkY6RgmJyq1shgJ-B6k9r_lAeBe7Bt3xS4Qwpohg8p')}
+        ESRI: { layer: L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}')}
 };
     var scenes = {
         overview: {lat: 44.0000000, lng: -123.278858, zoom: 7, name: 'Cover Page', layers: [layers.ESRI]},
